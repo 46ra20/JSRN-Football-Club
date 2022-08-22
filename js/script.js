@@ -28,7 +28,7 @@ document.getElementById('allPlyer').addEventListener('click', function(event){
 })
 
 function fieldValidation(fieldNumber){
-    if(fieldNumber >= 0 && typeof fieldNumber){
+    if(fieldNumber >= 0 && typeof fieldNumber === 'number'){
         return true;
     }
     else{
@@ -46,7 +46,16 @@ document.getElementById('perPlyerButton').addEventListener('click', function(){
     const plyerCost = perPlyerConst * countPlyer;
     if(fieldValidation(perPlyerConst)){
         document.getElementById('totalPlyerCost').innerHTML = plyerCost;
-        totalCost += plyerCost;
+        totalCost = plyerCost;
     }
 })
 
+document.getElementById('calculateTotal').addEventListener('click', ()=>{
+    let finalCalculation = 0;
+    const managerCost = parseInt(document.getElementById('manager').value);
+    const coachCost = parseInt(document.getElementById('coach').value);
+    if(fieldValidation(managerCost) && fieldValidation(coachCost)){
+        finalCalculation = totalCost + managerCost + coachCost;
+    }
+    document.getElementById('totalCost').innerHTML = finalCalculation;
+})
