@@ -4,6 +4,7 @@ function getName(plyerName){
     const plyerInList = plyerListItem.querySelectorAll('li');
     if(plyerInList.length < 5){
         const makeItem = document.createElement('li');
+        makeItem.setAttribute('class', 'py-1 font-normal');
         makeItem.innerHTML = plyerNameSelect;
         plyerListItem.append(makeItem);
 
@@ -16,6 +17,8 @@ function getName(plyerName){
     }
 }
 
+
+
 document.getElementById('allPlyer').addEventListener('click', function(event){
     const selectButton = event.target.innerHTML;
     if (selectButton.toLowerCase() === 'select'){
@@ -24,5 +27,26 @@ document.getElementById('allPlyer').addEventListener('click', function(event){
     }
 })
 
+function fieldValidation(fieldNumber){
+    if(fieldNumber >= 0 && typeof fieldNumber){
+        return true;
+    }
+    else{
+        alert('Enter a valid number');
+    }
+}
 
-console.log();
+let totalCost = 0;
+
+document.getElementById('perPlyerButton').addEventListener('click', function(){
+    const perPlyer = document.getElementById('perPlyer').value;
+    const perPlyerConst = parseFloat(perPlyer);
+    const plyerList = document.getElementById('plyerList');
+    const countPlyer = plyerList.querySelectorAll('li').length;
+    const plyerCost = perPlyerConst * countPlyer;
+    if(fieldValidation(perPlyerConst)){
+        document.getElementById('totalPlyerCost').innerHTML = plyerCost;
+        totalCost += plyerCost;
+    }
+})
+

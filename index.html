@@ -54,6 +54,18 @@
                             <p class="text-white text-center">120 Goal:50 Assist</p>
                             <button class="text-white block my-2 mx-4 bg-blue-500 py-2 font-semibold">Select</button>
                         </div>
+                        <div class="flex flex-col border border-gray-500 rounded">
+                            <img src="images/plyer/EricAbidal.jpg" class="w-auto" alt="">
+                            <h2 class="text-white text-center font-semibold text-xl py-2">Eric Abidal</h2>
+                            <p class="text-white text-center">120 Goal:50 Assist</p>
+                            <button class="text-white block my-2 mx-4 bg-blue-500 py-2 font-semibold">Select</button>
+                        </div>
+                        <div class="flex flex-col border border-gray-500 rounded">
+                            <img src="images/plyer/OusmaneDembélé.jpg" class="w-auto" alt="">
+                            <h2 class="text-white text-center font-semibold text-xl py-2">Ousmane Dembélé</h2>
+                            <p class="text-white text-center">120 Goal:50 Assist</p>
+                            <button class="text-white block my-2 mx-4 bg-blue-500 py-2 font-semibold">Select</button>
+                        </div>
                         
                     </div>
             </div>
@@ -61,9 +73,36 @@
 
             <div class="w-3/12">
                 <div class="container border border-gray-500 rounded">
-                    <h2 class="text-2xl font-semibold text-orange-500 text-center py-3 underline underline-offset-8">Plyer List</h2>
+                    <h2 class="text-2xl font-bold text-white text-center py-3 underline underline-offset-8">Plyer List</h2>
                     <ul class="text-white px-10 text-xl font-semibold py-2 list-decimal" id="plyerList">
                     </ul>
+                </div>
+                <!-- Budget Section -->
+                <div class="border border-gray-500 rounded mt-6">
+                    <h2 class="text-2xl font-bold text-white text-center py-3 underline underline-offset-8">Budget</h2>
+                    <div class="flex justify-between px-3 my-2 mr-1">
+                        <label for="perPlyer" class="text-white">Per Plyer</label>
+                        <input type="text" name="" class="w-2/4 bg-black border border-gray-500 text-white py-1 px-2" id="perPlyer">
+                    </div>
+                    <button class="text-white block my-2 mx-3 bg-blue-500 py-2 font-semibold text-center  w-11/12" id="perPlyerButton">Calculate</button>
+
+                    <div class="flex justify-between px-3 my-2 mr-1">
+                        <p class="text-white">Player Expenses</p>
+                        <p type="text" name="" class="bg-black text-white py-1 px-2">$<span id="totalPlyerCost"></span></p>
+                    </div>
+                    <div class="flex justify-between px-3 my-2 mr-1">
+                        <label for="perPlyer" class="text-white">Manager</label>
+                        <input type="text" name="" class="w-2/4 bg-black border border-gray-500 text-white py-1 px-2" id="manager">
+                    </div>
+                    <div class="flex justify-between px-3 my-2 mr-1">
+                        <label for="perPlyer" class="text-white">Coach</label>
+                        <input type="text" name="" class="w-2/4 bg-black border border-gray-500 text-white py-1 px-2" id="coach">
+                    </div>
+                    <button class="text-white block my-2 mx-3 bg-blue-500 py-2 font-semibold text-center  w-11/12" id="calculateTotal">Calculate Total</button>
+                    <div class="flex justify-between px-3 my-2 mr-1">
+                        <p class="text-white">Player Expenses</p>
+                        <p type="text" name="" class="bg-black text-orange-600 py-1 px-2 font-semibold">$<span id="totalPlyerCost"></span></p>
+                    </div>
                 </div>
             </div>
         </section>
