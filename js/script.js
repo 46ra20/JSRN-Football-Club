@@ -8,7 +8,8 @@ function getName(plyerName){
         plyerListItem.append(makeItem);
 
         const getButton = plyerName.querySelector('button')
-        console.log(getButton.setAttribute('disabled',true));
+        getButton.setAttribute("class", "text-white block my-2 mx-4 bg-blue-300 py-2 font-semibold");
+        getButton.disabled = true;
     }
     else{
         alert('Sorry, You can select only five person');
