@@ -28,8 +28,11 @@ document.getElementById('allPlyer').addEventListener('click', function(event){
 })
 
 function fieldValidation(fieldNumber){
-    if(fieldNumber >= 0 && typeof fieldNumber === 'number'){
-        return true;
+    const makeNumber = parseFloat(fieldNumber);
+    console.log(makeNumber);
+    console.log(isNaN(fieldNumber));
+    if(makeNumber >= 0 && (isNaN(fieldNumber) === false)){
+        return makeNumber;
     }
     else{
         alert('Enter a valid number');
@@ -40,7 +43,7 @@ let totalCost = 0;
 
 document.getElementById('perPlyerButton').addEventListener('click', function(){
     const perPlyer = document.getElementById('perPlyer').value;
-    const perPlyerConst = parseFloat(perPlyer);
+    const perPlyerConst = perPlyer;
     const plyerList = document.getElementById('plyerList');
     const countPlyer = plyerList.querySelectorAll('li').length;
     const plyerCost = perPlyerConst * countPlyer;
@@ -51,11 +54,8 @@ document.getElementById('perPlyerButton').addEventListener('click', function(){
 })
 
 document.getElementById('calculateTotal').addEventListener('click', ()=>{
-    let finalCalculation = 0;
-    const managerCost = parseInt(document.getElementById('manager').value);
-    const coachCost = parseInt(document.getElementById('coach').value);
-    if(fieldValidation(managerCost) && fieldValidation(coachCost)){
-        finalCalculation = totalCost + managerCost + coachCost;
-    }
+    const managerCost = document.getElementById('manager').value;
+    const coachCost = document.getElementById('coach').value;
+    let finalCalculation = totalCost + fieldValidation(managerCost) + fieldValidation(coachCost);
     document.getElementById('totalCost').innerHTML = finalCalculation;
 })
