@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
-header{
-    background-image: url(images/cover.jpg);
-}
 header h1{
     font-family: 'Berkshire Swash', cursive;
-}
-
-.democlass{
-    color: red;
-    background-color: white;
 }
